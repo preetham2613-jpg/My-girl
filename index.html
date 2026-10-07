@@ -7,7 +7,6 @@
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;min-height:100vh;overflow-x:hidden;font-family:Georgia,"Times New Roman",serif;color:#fff;background:radial-gradient(circle at 20% 15%,rgba(255,95,158,.22),transparent 28%),radial-gradient(circle at 80% 80%,rgba(147,82,255,.18),transparent 30%),linear-gradient(135deg,#120816,#260d25 48%,#08050d)}
-body:before{content:"";position:fixed;inset:0;z-index:-2;background:linear-gradient(rgba(10,5,15,.48),rgba(10,5,15,.75)),url("images/us-background.jpg") center/cover no-repeat;opacity:.55;filter:saturate(.9)}
 body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at center,transparent 35%,rgba(0,0,0,.48) 100%)}
 .stars{position:fixed;inset:0;pointer-events:none;z-index:0}.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.7;animation:twinkle 2.5s infinite alternate}
 @keyframes twinkle{to{opacity:.12;transform:scale(.35)}}
@@ -29,7 +28,7 @@ button:hover{transform:translateY(-3px) scale(1.025)}button:active{transform:sca
 .counter{text-align:center;padding:20px;border-radius:20px;background:rgba(255,255,255,.07);margin-top:20px}
 .final{text-align:center;padding:25px;border-radius:23px;background:linear-gradient(135deg,rgba(255,80,145,.13),rgba(160,100,255,.12));margin-top:22px}
 .bigHeart{font-size:48px;animation:pulse 1.5s infinite}@keyframes pulse{50%{transform:scale(1.16)}}
-.signature{font-style:italic;margin-top:18px}.photoHint{margin-top:20px;padding:13px;border:1px dashed rgba(255,255,255,.22);border-radius:15px;font-size:12px;opacity:.55}.footer{font-size:11px;opacity:.38;margin-top:25px;letter-spacing:1px}
+.signature{font-style:italic;margin-top:18px}.footer{font-size:11px;opacity:.38;margin-top:25px;letter-spacing:1px}
 </style>
 </head>
 <body>
@@ -48,15 +47,28 @@ button:hover{transform:translateY(-3px) scale(1.025)}button:active{transform:sca
 <p>I miss talking to you, laughing with you, annoying you, and all those tiny moments that probably feel ordinary but mean so much to me.</p>
 <p class="highlight">I really wish time flies by and we can meet sooon <strong>thangameee</strong> ❤️</p>
 </div>
+
 <div style="text-align:center"><button onclick="showReason()">But why do I miss you this much? 👀</button></div>
 <div class="reasonBox" id="reasonBox"><div class="reason" id="reason"></div><button class="secondary" onclick="nextReason()">Tell me another one ❤️</button></div>
+
 <div style="text-align:center;margin-top:16px"><button class="secondary" onclick="showCounter()">One little surprise… ✨</button></div>
-<div class="counter" id="counter"><div style="font-size:30px">⏳❤️</div><p>I know waiting is hard.</p><p><strong>But every day that passes is one day closer to seeing you.</strong></p><p>So until then… keep a little piece of me with you.</p></div>
+<div class="counter" id="counter">
+<div style="font-size:30px">⏳❤️</div>
+<p>I know waiting is hard.</p>
+<p><strong>But every day that passes is one day closer to seeing you.</strong></p>
+<p>So until then… keep a little piece of me with you.</p>
+</div>
+
 <div style="text-align:center;margin-top:12px"><button onclick="showFinal()">There's one more thing… 🥺</button></div>
-<div class="final" id="final"><div class="bigHeart">❤️</div><p>Nivii, if you ever wonder how much I miss you…</p><p>Just remember that I made an entire little website because one normal message wasn't enough to say it.</p><p><strong>Come back to me soon, okay? I have so much to tell you, so much to laugh about, and a very big hug waiting for you. 🫂❤️</strong></p><p class="signature">— Your person, who misses you way too much ❤️</p></div>
+<div class="final" id="final">
+<div class="bigHeart">❤️</div>
+<p>Nivii, if you ever wonder how much I miss you…</p>
+<p>Just remember that I made an entire little website because one normal message wasn't enough to say it.</p>
+<p><strong>Can't wait to meet you,<br>Until next time.<br>Big virtual Hugsss 🫂❤️</strong></p>
+<p class="signature">— Your person, who misses you way too much ❤️</p>
+</div>
 </section>
 
-<div class="photoHint">📸 Want your photo together in the background? Add your image as <strong>images/us-background.jpg</strong> — the website is already prepared for it.</div>
 <div class="footer">Made with love. And probably a little too much missing-you energy.</div>
 </main></div>
 
