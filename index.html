@@ -3,130 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Little Note For You ❤️</title>
+<title>For Nivii ❤️</title>
 <style>
-  *{box-sizing:border-box}
-  body{
-    margin:0; min-height:100vh; overflow:hidden;
-    font-family:Georgia, "Times New Roman", serif;
-    background:radial-gradient(circle at top,#4b1838 0%,#210d22 45%,#090611 100%);
-    color:#fff; display:flex; align-items:center; justify-content:center;
-  }
-  .stars{position:fixed;inset:0;pointer-events:none}
-  .star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.7;animation:twinkle 2s infinite alternate}
-  @keyframes twinkle{to{opacity:.15;transform:scale(.4)}}
-  .heart{position:fixed;bottom:-30px;font-size:18px;pointer-events:none;animation:float 7s linear forwards;opacity:.8}
-  @keyframes float{0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:.8}100%{transform:translateY(-110vh) rotate(360deg);opacity:0}}
-  .card{
-    width:min(92vw,520px); max-height:90vh; overflow:auto;
-    padding:34px 28px; text-align:center; border-radius:28px;
-    background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.18);
-    box-shadow:0 20px 70px rgba(0,0,0,.5); backdrop-filter:blur(14px);
-    position:relative; z-index:2;
-  }
-  .small{letter-spacing:3px;text-transform:uppercase;font-size:12px;opacity:.7}
-  h1{font-size:clamp(32px,8vw,52px);margin:12px 0 8px}
-  .subtitle{font-size:18px;opacity:.82;margin-bottom:24px}
-  button{
-    border:0; border-radius:999px; padding:13px 22px; margin:7px;
-    font-size:15px; cursor:pointer; color:#fff;
-    background:linear-gradient(135deg,#ff5f9e,#b83280);
-    box-shadow:0 8px 25px rgba(255,76,145,.25);
-    transition:.2s;
-  }
-  button:hover{transform:translateY(-2px) scale(1.02)}
-  .secondary{background:rgba(255,255,255,.12);box-shadow:none}
-  .message{display:none;text-align:left;line-height:1.75;font-size:17px;margin-top:20px;animation:appear .7s ease}
-  @keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-  .reason{display:none;margin:22px auto 0;font-size:21px;min-height:35px}
-  .final{display:none;margin-top:25px;padding:20px;border-radius:20px;background:rgba(255,255,255,.08);animation:appear .7s ease}
-  .signature{margin-top:18px;font-style:italic}
-  .counter{font-size:13px;opacity:.55;margin-top:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;overflow-x:hidden;font-family:Georgia,"Times New Roman",serif;color:#fff;background:radial-gradient(circle at 20% 15%,rgba(255,95,158,.22),transparent 28%),radial-gradient(circle at 80% 80%,rgba(147,82,255,.18),transparent 30%),linear-gradient(135deg,#120816,#260d25 48%,#08050d)}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:linear-gradient(rgba(10,5,15,.48),rgba(10,5,15,.75)),url("images/us-background.jpg") center/cover no-repeat;opacity:.55;filter:saturate(.9)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at center,transparent 35%,rgba(0,0,0,.48) 100%)}
+.stars{position:fixed;inset:0;pointer-events:none;z-index:0}.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.7;animation:twinkle 2.5s infinite alternate}
+@keyframes twinkle{to{opacity:.12;transform:scale(.35)}}
+.heart{position:fixed;bottom:-35px;pointer-events:none;z-index:5;animation:floatUp linear forwards}
+@keyframes floatUp{0%{transform:translateY(0) rotate(0) scale(.7);opacity:0}12%{opacity:.9}100%{transform:translateY(-115vh) rotate(360deg) scale(1.15);opacity:0}}
+.wrap{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:30px 15px}
+.card{width:min(94vw,620px);text-align:center;padding:38px 28px;border:1px solid rgba(255,255,255,.18);border-radius:32px;background:rgba(255,255,255,.085);backdrop-filter:blur(14px);box-shadow:0 25px 90px rgba(0,0,0,.55);animation:cardIn 1.1s ease}
+@keyframes cardIn{from{opacity:0;transform:translateY(25px) scale(.97)}to{opacity:1;transform:none}}
+.kicker{font-size:11px;letter-spacing:4px;text-transform:uppercase;opacity:.68}
+h1{font-size:clamp(42px,11vw,76px);margin:12px 0 0;line-height:1}.name{background:linear-gradient(90deg,#ffd1e5,#ff6fa8,#e5c7ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{font-size:18px;opacity:.82;margin:18px 0 26px}
+button{border:0;border-radius:999px;padding:14px 23px;margin:7px;font:inherit;font-size:15px;color:white;cursor:pointer;background:linear-gradient(135deg,#ff5f9e,#b83280);box-shadow:0 9px 28px rgba(255,70,145,.28);transition:.22s ease}
+button:hover{transform:translateY(-3px) scale(1.025)}button:active{transform:scale(.97)}.secondary{background:rgba(255,255,255,.11);box-shadow:none}
+.message{display:none;text-align:left;line-height:1.8;font-size:17px;margin-top:25px;animation:appear .7s ease}
+@keyframes appear{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.letter{padding:22px;border-radius:23px;background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.09);margin:18px 0}
+.highlight{font-size:20px;line-height:1.65;text-align:center}
+.reasonBox,.counter,.final{display:none;animation:appear .6s ease}.reasonBox{text-align:center;margin:22px 0}.reason{font-size:21px;min-height:45px}
+.counter{text-align:center;padding:20px;border-radius:20px;background:rgba(255,255,255,.07);margin-top:20px}
+.final{text-align:center;padding:25px;border-radius:23px;background:linear-gradient(135deg,rgba(255,80,145,.13),rgba(160,100,255,.12));margin-top:22px}
+.bigHeart{font-size:48px;animation:pulse 1.5s infinite}@keyframes pulse{50%{transform:scale(1.16)}}
+.signature{font-style:italic;margin-top:18px}.photoHint{margin-top:20px;padding:13px;border:1px dashed rgba(255,255,255,.22);border-radius:15px;font-size:12px;opacity:.55}.footer{font-size:11px;opacity:.38;margin-top:25px;letter-spacing:1px}
 </style>
 </head>
 <body>
 <div class="stars" id="stars"></div>
+<div class="wrap"><main class="card">
+<div class="kicker">A tiny corner of the internet, made just for you</div>
+<h1>For <span class="name">Nivii</span> ❤️</h1>
+<div class="subtitle">Because sometimes a message isn't enough.</div>
+<button onclick="openNote()">Open this, thangameee 💌</button>
 
-<div class="card">
-  <div class="small">A tiny corner of the internet… just for you</div>
-  <h1>Hey, you. ❤️</h1>
-  <div class="subtitle">I have something small to tell you.</div>
-
-  <button onclick="openNote()">Open my note 💌</button>
-
-  <div class="message" id="message">
-    <p>Some days I can keep myself busy and pretend I'm completely fine…</p>
-    <p>And then something tiny happens — a song, a random thought, a familiar place — and suddenly, I realise how much I miss you.</p>
-    <p>I miss your voice. I miss your smile. I miss those little conversations that somehow make an ordinary day feel better.</p>
-    <p>Mostly, I just miss <strong>having you around</strong>.</p>
-
-    <div style="text-align:center">
-      <button onclick="showReason()">But why do I miss you? 👀</button>
-      <div class="reason" id="reason"></div>
-    </div>
-
-    <div style="text-align:center;margin-top:18px">
-      <button class="secondary" onclick="showFinal()">One last thing…</button>
-    </div>
-
-    <div class="final" id="final">
-      <div style="font-size:28px">🌙 ❤️</div>
-      <p>If distance could hear me, it would know how many times a day I think of you.</p>
-      <p><strong>Until I see you again… I miss you a little more than yesterday.</strong></p>
-      <div class="signature">— Yours, always ❤️</div>
-    </div>
-  </div>
-  <div class="counter">Made with a little too much love.</div>
+<section class="message" id="message">
+<div class="letter">
+<p>Hey Nivii… ❤️</p>
+<p class="highlight">I misss you so much and today it genuinely hit me hard how my life feels empty without you near me...</p>
+<p>I don't know how you do it, but even when you're not around, somehow little things keep reminding me of you. A song. A random thought. A quiet moment. And suddenly I just wish you were here.</p>
+<p>I miss talking to you, laughing with you, annoying you, and all those tiny moments that probably feel ordinary but mean so much to me.</p>
+<p class="highlight">I really wish time flies by and we can meet sooon <strong>thangameee</strong> ❤️</p>
 </div>
+<div style="text-align:center"><button onclick="showReason()">But why do I miss you this much? 👀</button></div>
+<div class="reasonBox" id="reasonBox"><div class="reason" id="reason"></div><button class="secondary" onclick="nextReason()">Tell me another one ❤️</button></div>
+<div style="text-align:center;margin-top:16px"><button class="secondary" onclick="showCounter()">One little surprise… ✨</button></div>
+<div class="counter" id="counter"><div style="font-size:30px">⏳❤️</div><p>I know waiting is hard.</p><p><strong>But every day that passes is one day closer to seeing you.</strong></p><p>So until then… keep a little piece of me with you.</p></div>
+<div style="text-align:center;margin-top:12px"><button onclick="showFinal()">There's one more thing… 🥺</button></div>
+<div class="final" id="final"><div class="bigHeart">❤️</div><p>Nivii, if you ever wonder how much I miss you…</p><p>Just remember that I made an entire little website because one normal message wasn't enough to say it.</p><p><strong>Come back to me soon, okay? I have so much to tell you, so much to laugh about, and a very big hug waiting for you. 🫂❤️</strong></p><p class="signature">— Your person, who misses you way too much ❤️</p></div>
+</section>
+
+<div class="photoHint">📸 Want your photo together in the background? Add your image as <strong>images/us-background.jpg</strong> — the website is already prepared for it.</div>
+<div class="footer">Made with love. And probably a little too much missing-you energy.</div>
+</main></div>
 
 <script>
-const reasons = [
-  "Because your smile is my favourite notification. ❤️",
-  "Because talking to you makes even boring days better.",
-  "Because somehow, everything reminds me of you.",
-  "Because you're my favourite person to annoy. 😌",
-  "Because I simply feel happier when you're around.",
-  "Because… you're you. And that's enough. ❤️"
+const reasons=[
+"Because everything feels a little better when you're around. ❤️",
+"Because I miss your voice and our random conversations.",
+"Because I miss laughing with you over the stupidest things.",
+"Because even the smallest things somehow remind me of you.",
+"Because you're the person I want beside me when the day gets quiet.",
+"Because you're Nivii… and honestly, that's reason enough. ❤️"
 ];
-let reasonIndex = 0;
-
-function openNote(){
-  document.getElementById('message').style.display='block';
-  document.querySelector('.message').scrollIntoView({behavior:'smooth',block:'center'});
-  burstHearts(12);
-}
-function showReason(){
-  const el=document.getElementById('reason');
-  el.style.display='block';
-  el.textContent=reasons[reasonIndex % reasons.length];
-  reasonIndex++;
-  burstHearts(5);
-}
-function showFinal(){
-  document.getElementById('final').style.display='block';
-  burstHearts(25);
-  document.getElementById('final').scrollIntoView({behavior:'smooth',block:'center'});
-}
-function burstHearts(n){
-  for(let i=0;i<n;i++) setTimeout(createHeart,i*80);
-}
-function createHeart(){
-  const h=document.createElement('div');
-  h.className='heart';
-  h.textContent=['❤️','💗','💕','💖','✨'][Math.floor(Math.random()*5)];
-  h.style.left=Math.random()*100+'vw';
-  h.style.fontSize=(14+Math.random()*18)+'px';
-  h.style.animationDuration=(5+Math.random()*4)+'s';
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(),9000);
-}
-for(let i=0;i<70;i++){
-  const s=document.createElement('div'); s.className='star';
-  s.style.left=Math.random()*100+'%'; s.style.top=Math.random()*100+'%';
-  s.style.animationDelay=Math.random()*2+'s';
-  document.getElementById('stars').appendChild(s);
-}
-setInterval(()=>{ if(Math.random()<.65) createHeart(); },1200);
+let reasonIndex=0;
+function openNote(){document.getElementById("message").style.display="block";burst(18);setTimeout(()=>document.getElementById("message").scrollIntoView({behavior:"smooth",block:"center"}),150)}
+function showReason(){document.getElementById("reasonBox").style.display="block";showReasonText();burst(7)}
+function showReasonText(){document.getElementById("reason").textContent=reasons[reasonIndex%reasons.length];reasonIndex++}
+function nextReason(){showReasonText();burst(5)}
+function showCounter(){document.getElementById("counter").style.display="block";burst(10)}
+function showFinal(){document.getElementById("final").style.display="block";burst(28);setTimeout(()=>document.getElementById("final").scrollIntoView({behavior:"smooth",block:"center"}),100)}
+function heart(){const h=document.createElement("div");h.className="heart";h.textContent=["❤️","💗","💕","💖","✨","🥺"][Math.floor(Math.random()*6)];h.style.left=Math.random()*100+"vw";h.style.fontSize=(14+Math.random()*18)+"px";h.style.animationDuration=(5+Math.random()*5)+"s";document.body.appendChild(h);setTimeout(()=>h.remove(),10000)}
+function burst(n){for(let i=0;i<n;i++)setTimeout(heart,i*70)}
+for(let i=0;i<75;i++){const s=document.createElement("div");s.className="star";s.style.left=Math.random()*100+"%";s.style.top=Math.random()*100+"%";s.style.animationDelay=Math.random()*2.5+"s";document.getElementById("stars").appendChild(s)}
+setInterval(()=>{if(Math.random()<.65)heart()},1100);
 </script>
 </body>
 </html>
