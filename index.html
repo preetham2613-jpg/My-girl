@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Note For You ❤️</title>
+<style>
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh; overflow:hidden;
+    font-family:Georgia, "Times New Roman", serif;
+    background:radial-gradient(circle at top,#4b1838 0%,#210d22 45%,#090611 100%);
+    color:#fff; display:flex; align-items:center; justify-content:center;
+  }
+  .stars{position:fixed;inset:0;pointer-events:none}
+  .star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.7;animation:twinkle 2s infinite alternate}
+  @keyframes twinkle{to{opacity:.15;transform:scale(.4)}}
+  .heart{position:fixed;bottom:-30px;font-size:18px;pointer-events:none;animation:float 7s linear forwards;opacity:.8}
+  @keyframes float{0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:.8}100%{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+  .card{
+    width:min(92vw,520px); max-height:90vh; overflow:auto;
+    padding:34px 28px; text-align:center; border-radius:28px;
+    background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.18);
+    box-shadow:0 20px 70px rgba(0,0,0,.5); backdrop-filter:blur(14px);
+    position:relative; z-index:2;
+  }
+  .small{letter-spacing:3px;text-transform:uppercase;font-size:12px;opacity:.7}
+  h1{font-size:clamp(32px,8vw,52px);margin:12px 0 8px}
+  .subtitle{font-size:18px;opacity:.82;margin-bottom:24px}
+  button{
+    border:0; border-radius:999px; padding:13px 22px; margin:7px;
+    font-size:15px; cursor:pointer; color:#fff;
+    background:linear-gradient(135deg,#ff5f9e,#b83280);
+    box-shadow:0 8px 25px rgba(255,76,145,.25);
+    transition:.2s;
+  }
+  button:hover{transform:translateY(-2px) scale(1.02)}
+  .secondary{background:rgba(255,255,255,.12);box-shadow:none}
+  .message{display:none;text-align:left;line-height:1.75;font-size:17px;margin-top:20px;animation:appear .7s ease}
+  @keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .reason{display:none;margin:22px auto 0;font-size:21px;min-height:35px}
+  .final{display:none;margin-top:25px;padding:20px;border-radius:20px;background:rgba(255,255,255,.08);animation:appear .7s ease}
+  .signature{margin-top:18px;font-style:italic}
+  .counter{font-size:13px;opacity:.55;margin-top:18px}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+
+<div class="card">
+  <div class="small">A tiny corner of the internet… just for you</div>
+  <h1>Hey, you. ❤️</h1>
+  <div class="subtitle">I have something small to tell you.</div>
+
+  <button onclick="openNote()">Open my note 💌</button>
+
+  <div class="message" id="message">
+    <p>Some days I can keep myself busy and pretend I'm completely fine…</p>
+    <p>And then something tiny happens — a song, a random thought, a familiar place — and suddenly, I realise how much I miss you.</p>
+    <p>I miss your voice. I miss your smile. I miss those little conversations that somehow make an ordinary day feel better.</p>
+    <p>Mostly, I just miss <strong>having you around</strong>.</p>
+
+    <div style="text-align:center">
+      <button onclick="showReason()">But why do I miss you? 👀</button>
+      <div class="reason" id="reason"></div>
+    </div>
+
+    <div style="text-align:center;margin-top:18px">
+      <button class="secondary" onclick="showFinal()">One last thing…</button>
+    </div>
+
+    <div class="final" id="final">
+      <div style="font-size:28px">🌙 ❤️</div>
+      <p>If distance could hear me, it would know how many times a day I think of you.</p>
+      <p><strong>Until I see you again… I miss you a little more than yesterday.</strong></p>
+      <div class="signature">— Yours, always ❤️</div>
+    </div>
+  </div>
+  <div class="counter">Made with a little too much love.</div>
+</div>
+
+<script>
+const reasons = [
+  "Because your smile is my favourite notification. ❤️",
+  "Because talking to you makes even boring days better.",
+  "Because somehow, everything reminds me of you.",
+  "Because you're my favourite person to annoy. 😌",
+  "Because I simply feel happier when you're around.",
+  "Because… you're you. And that's enough. ❤️"
+];
+let reasonIndex = 0;
+
+function openNote(){
+  document.getElementById('message').style.display='block';
+  document.querySelector('.message').scrollIntoView({behavior:'smooth',block:'center'});
+  burstHearts(12);
+}
+function showReason(){
+  const el=document.getElementById('reason');
+  el.style.display='block';
+  el.textContent=reasons[reasonIndex % reasons.length];
+  reasonIndex++;
+  burstHearts(5);
+}
+function showFinal(){
+  document.getElementById('final').style.display='block';
+  burstHearts(25);
+  document.getElementById('final').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function burstHearts(n){
+  for(let i=0;i<n;i++) setTimeout(createHeart,i*80);
+}
+function createHeart(){
+  const h=document.createElement('div');
+  h.className='heart';
+  h.textContent=['❤️','💗','💕','💖','✨'][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+'vw';
+  h.style.fontSize=(14+Math.random()*18)+'px';
+  h.style.animationDuration=(5+Math.random()*4)+'s';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),9000);
+}
+for(let i=0;i<70;i++){
+  const s=document.createElement('div'); s.className='star';
+  s.style.left=Math.random()*100+'%'; s.style.top=Math.random()*100+'%';
+  s.style.animationDelay=Math.random()*2+'s';
+  document.getElementById('stars').appendChild(s);
+}
+setInterval(()=>{ if(Math.random()<.65) createHeart(); },1200);
+</script>
+</body>
+</html>
